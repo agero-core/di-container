@@ -1,5 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Agero.Core.DIContainer</PackageId>
+    <PackageTags>DI,IoC,DependencyInjection,InversionOfControl</PackageTags>
+    <Version>1.0.0</Version>
+    <Authors>Core Automation Team</Authors>
+    <Company>Agero Inc.</Company>
+    <Copyright>Copyright © Agero 2018</Copyright>
+    <Product>DI Container</Product>
+    <Description>Dependency injection library for .NET applications.</Description>
+    <Title>DI Container</Title>
+    <PackageProjectUrl>https://github.com/agero-core/di-container</PackageProjectUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/8b6c044292b862f1870550039390f631</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/agero-core/di-container/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/agero-core/di-container.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RootNamespace>Agero.Core.DIContainer</RootNamespace>
+    <AssemblyName>Agero.Core.DIContainer</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
+  </ItemGroup>
 </Project>
