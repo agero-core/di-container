@@ -23,6 +23,13 @@ namespace Agero.Core.DIContainer
         /// <exception cref="ContainerException">If key type is already registered</exception>
         void RegisterImplementation(Type keyType, Type implementationType, Lifetime lifetime = Lifetime.PerCall);
 
+        /// <summary>Registers type as key and implementation</summary>
+        /// <typeparam name="TImplementation">Registration type</typeparam>
+        /// <param name="lifetime">Lifetime of object in DI container</param>
+        /// <exception cref="ContainerException">If implementation type is already registered</exception>
+        void RegisterImplementation<TImplementation>(Lifetime lifetime = Lifetime.PerCall)
+            where TImplementation : class;
+        
         /// <summary>Registers key type with factory method</summary>
         /// <typeparam name="TKey">Registration key type</typeparam>
         /// <param name="factoryMethod">Factory method to create instance</param>
@@ -59,6 +66,14 @@ namespace Agero.Core.DIContainer
         /// <exception cref="ContainerException">If key type is already registered</exception>
         void RegisterInstance(Type keyType, object instance);
 
+        /// <summary>Registers object of instance type</summary>
+        /// <typeparam name="TInstanceType">Registration type</typeparam>
+        /// <param name="instance">Object of instance type</param>
+        /// <remarks>This method registers instance type with <see cref="Lifetime.PerContainer"/> lifetime</remarks>
+        /// <exception cref="ContainerException">If instance type is already registered</exception>
+        void RegisterInstance<TInstanceType>(TInstanceType instance)
+            where TInstanceType : class;
+        
         /// <summary>Removes registration of key type from DI container</summary>
         /// <typeparam name="TKey">Registration key type</typeparam>
         /// <exception cref="ContainerException">If key type is not registered in DI container</exception>

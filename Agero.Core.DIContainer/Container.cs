@@ -203,7 +203,13 @@ namespace Agero.Core.DIContainer
                 _implementationDefinitions.Add(keyType, implementation);
             }
         }
-        
+
+        public void RegisterImplementation<TImplementation>(Lifetime lifetime = Lifetime.PerCall) 
+            where TImplementation : class
+        {
+            RegisterImplementation<TImplementation, TImplementation>();
+        }
+
         public void RegisterFactoryMethod<TKey>(Func<IReadOnlyContainer, TKey> factoryMethod, Lifetime lifetime = Lifetime.PerCall)
         {
             Check.ArgumentIsNull(factoryMethod, nameof(factoryMethod));
@@ -230,6 +236,8 @@ namespace Agero.Core.DIContainer
         public void RegisterInstance<TKey, TInstanceType>(TInstanceType instance)
             where TInstanceType : class, TKey
         {
+            Check.ArgumentIsNull(instance, nameof(instance));
+            
             RegisterInstance(typeof(TKey), instance);
         }
 
@@ -249,6 +257,14 @@ namespace Agero.Core.DIContainer
                 _implementationDefinitions.Add(keyType, new ImplementationType(instance.GetType(), Lifetime.PerContainer));
                 _instances.Add(keyType, new Instance(instance));
             }
+        }
+
+        public void RegisterInstance<TInstanceType>(TInstanceType instance) 
+            where TInstanceType : class
+        {
+            Check.ArgumentIsNull(instance, nameof(instance));
+            
+            RegisterInstance<TInstanceType, TInstanceType>(instance);
         }
 
         public void Remove<TKey>()
