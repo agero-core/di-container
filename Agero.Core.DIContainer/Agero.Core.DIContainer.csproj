@@ -11,7 +11,8 @@
     <Description>Dependency injection library for .NET applications.</Description>
     <Title>DI Container</Title>
     <PackageProjectUrl>https://github.com/agero-core/di-container</PackageProjectUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>
+    </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIconUrl>https://secure.gravatar.com/avatar/8b6c044292b862f1870550039390f631</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/agero-core/di-container/master/LICENSE.md</PackageLicenseUrl>
@@ -23,8 +24,10 @@
     <RootNamespace>Agero.Core.DIContainer</RootNamespace>
     <AssemblyName>Agero.Core.DIContainer</AssemblyName>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Agero.Core.Checker" Version="1.0.10" />
   </ItemGroup>
 </Project>
