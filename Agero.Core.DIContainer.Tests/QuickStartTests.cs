@@ -6,17 +6,17 @@ namespace Agero.Core.DIContainer.Tests
     [TestClass]
     public class QuickStartTests
     {
-        public interface ISample { }
+        private interface ISample { }
 
-        public class Sample : ISample { }
+        private class Sample : ISample { }
 
-        public interface ISingletonSample { }
+        private interface ISingletonSample { }
 
-        public class SingletonSample : ISingletonSample { }
+        private class SingletonSample : ISingletonSample { }
 
-        public interface IInstanceSample { }
+        private interface IInstanceSample { }
 
-        public class InstanceSample : IInstanceSample { }
+        private class InstanceSample : IInstanceSample { }
 
         [TestMethod]
         public void Test_Registration_And_Retrieving()
@@ -44,14 +44,14 @@ namespace Agero.Core.DIContainer.Tests
             Assert.AreSame(instanceSample, retrievedInstance);
         }
 
-        public interface IInjectSample
+        private interface IInjectSample
         {
             ISample SampleProperty { get; }
 
             IInstanceSample InstanceSampleProperty { get; }
         }
 
-        public class InjectSample : IInjectSample
+        private class InjectSample : IInjectSample
         {
             // An instance of IInstanceSample will be injected on creating InjectSample
             [Inject]
